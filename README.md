@@ -1,0 +1,1 @@
+# bitnami-postgresql-wal2json
