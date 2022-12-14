@@ -1,0 +1,53 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "betaboon", email = "betaboon@0x80.ninja"},
+]
+dependencies = [
+    "requests>=2.28.1",
+    "pydantic>=1.10.2",
+]
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.pdm.scripts]
+updater = { call = "main:main" }
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "types-requests>=2.28.11.5",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.flake8]
+# Recommend matching the black line length (default 88),
+# rather than using the flake8 default of 79:
+max-line-length = 88
+extend-ignore = [
+    # See https://github.com/PyCQA/pycodestyle/issues/373
+    "E203",
+]
+per-file-ignores = [
+  # imported but unused
+  "__init__.py:F401",
+  # comparison to True should be 'if cond is True:' or 'if cond:'
+  "tests/*:E712",
+]
+exclude = [
+  "__pypackages__",
+  "build",
+  "dist",
+]
+
+[tool.isort]
+profile = "black"
+atomic = true
+filter_files = true
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
