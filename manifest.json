@@ -6,24 +6,24 @@
     },
     "postgresql": [
         {
-            "last_updated": "2023-04-28T22:02:29+00:00",
+            "last_updated": "2023-04-30T22:02:28+00:00",
             "version": "13.10.0",
             "major_version": "13",
-            "upstream_tag": "13.10.0-debian-11-r27",
+            "upstream_tag": "13.10.0-debian-11-r28",
             "tags": [
-                "betaboon/bitnami-postgresql-wal2json:13.10.0-debian-11-r27",
+                "betaboon/bitnami-postgresql-wal2json:13.10.0-debian-11-r28",
                 "betaboon/bitnami-postgresql-wal2json:13-debian-11",
                 "betaboon/bitnami-postgresql-wal2json:13.10.0",
                 "betaboon/bitnami-postgresql-wal2json:13"
             ]
         },
         {
-            "last_updated": "2023-04-28T22:02:29+00:00",
+            "last_updated": "2023-04-30T22:02:28+00:00",
             "version": "14.7.0",
             "major_version": "14",
-            "upstream_tag": "14.7.0-debian-11-r27",
+            "upstream_tag": "14.7.0-debian-11-r28",
             "tags": [
-                "betaboon/bitnami-postgresql-wal2json:14.7.0-debian-11-r27",
+                "betaboon/bitnami-postgresql-wal2json:14.7.0-debian-11-r28",
                 "betaboon/bitnami-postgresql-wal2json:14-debian-11",
                 "betaboon/bitnami-postgresql-wal2json:14.7.0",
                 "betaboon/bitnami-postgresql-wal2json:14"
