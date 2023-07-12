@@ -18,12 +18,12 @@
             ]
         },
         {
-            "last_updated": "2023-07-11T17:02:24+00:00",
+            "last_updated": "2023-07-12T19:02:31+00:00",
             "version": "14.8.0",
             "major_version": "14",
-            "upstream_tag": "14.8.0-debian-11-r22",
+            "upstream_tag": "14.8.0-debian-11-r23",
             "tags": [
-                "betaboon/bitnami-postgresql-wal2json:14.8.0-debian-11-r22",
+                "betaboon/bitnami-postgresql-wal2json:14.8.0-debian-11-r23",
                 "betaboon/bitnami-postgresql-wal2json:14-debian-11",
                 "betaboon/bitnami-postgresql-wal2json:14.8.0",
                 "betaboon/bitnami-postgresql-wal2json:14"
