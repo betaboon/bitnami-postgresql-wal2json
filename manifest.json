@@ -6,36 +6,36 @@
     },
     "postgresql": [
         {
-            "last_updated": "2023-10-05T12:03:52+00:00",
+            "last_updated": "2023-10-10T00:07:38+00:00",
             "version": "13.12.0",
             "major_version": "13",
-            "upstream_tag": "13.12.0-debian-11-r55",
+            "upstream_tag": "13.12.0-debian-11-r56",
             "tags": [
-                "betaboon/bitnami-postgresql-wal2json:13.12.0-debian-11-r55",
+                "betaboon/bitnami-postgresql-wal2json:13.12.0-debian-11-r56",
                 "betaboon/bitnami-postgresql-wal2json:13-debian-11",
                 "betaboon/bitnami-postgresql-wal2json:13.12.0",
                 "betaboon/bitnami-postgresql-wal2json:13"
             ]
         },
         {
-            "last_updated": "2023-10-05T13:05:17+00:00",
+            "last_updated": "2023-10-10T00:07:38+00:00",
             "version": "14.9.0",
             "major_version": "14",
-            "upstream_tag": "14.9.0-debian-11-r54",
+            "upstream_tag": "14.9.0-debian-11-r55",
             "tags": [
-                "betaboon/bitnami-postgresql-wal2json:14.9.0-debian-11-r54",
+                "betaboon/bitnami-postgresql-wal2json:14.9.0-debian-11-r55",
                 "betaboon/bitnami-postgresql-wal2json:14-debian-11",
                 "betaboon/bitnami-postgresql-wal2json:14.9.0",
                 "betaboon/bitnami-postgresql-wal2json:14"
             ]
         },
         {
-            "last_updated": "2023-10-05T14:02:37+00:00",
+            "last_updated": "2023-10-10T00:07:38+00:00",
             "version": "15.4.0",
             "major_version": "15",
-            "upstream_tag": "15.4.0-debian-11-r50",
+            "upstream_tag": "15.4.0-debian-11-r51",
             "tags": [
-                "betaboon/bitnami-postgresql-wal2json:15.4.0-debian-11-r50",
+                "betaboon/bitnami-postgresql-wal2json:15.4.0-debian-11-r51",
                 "betaboon/bitnami-postgresql-wal2json:15-debian-11",
                 "betaboon/bitnami-postgresql-wal2json:15.4.0",
                 "betaboon/bitnami-postgresql-wal2json:15",
