@@ -31,7 +31,7 @@ jobs:
             --update-time $update_time \
             --manifest ../manifest.json \
             --summary ../summary.md \
-            13 14 15
+            13 14 15 16
           manifest=$(cat ../manifest.json | jq -c)
           echo "manifest=$manifest" >> $GITHUB_OUTPUT
           cat ../summary.md >> $GITHUB_STEP_SUMMARY
@@ -45,7 +45,7 @@ jobs:
   build:
     strategy:
       matrix:
-        postgresql-version: ["13", "14", "15"]
+        postgresql-version: ["13", "14", "15", "16"]
     runs-on: ubuntu-latest
     needs: update
     steps:
