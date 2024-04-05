@@ -9,6 +9,7 @@ import textwrap
 from datetime import datetime, timezone
 
 import requests
+from loguru import logger
 from pydantic.dataclasses import dataclass
 from pydantic.json import pydantic_encoder
 
@@ -100,6 +101,7 @@ def get_postgresql_records(
             upstream_tag=version_tag_latest["name"],
             latest=(i + 1 == len(postgresql_major_versions)),
         )
+        logger.debug(f"Found postgresql tag: {record.upstream_tag}")
         records.append(record)
     return records
 
@@ -130,6 +132,8 @@ def update_manifest(
     image_name: str,
     postgresql_major_versions: list[str],
 ) -> Manifest:
+    postgresql_major_versions = sorted(postgresql_major_versions)
+    logger.debug(f"Updating manifest for majors: {' '.join(postgresql_major_versions)}")
     new_manifest = generate_manifest(
         update_time=update_time,
         image_name=image_name,
@@ -142,16 +146,26 @@ def update_manifest(
     if manifest.wal2json.upstream_tag != new_manifest.wal2json.upstream_tag:
         manifest.wal2json = new_manifest.wal2json
 
-    old_versions = sorted(manifest.postgresql, key=lambda p: p.major_version)
-    new_versions = sorted(new_manifest.postgresql, key=lambda p: p.major_version)
+    old_postgresql_records = {r.major_version: r for r in manifest.postgresql}
+    new_postgresql_records = {r.major_version: r for r in new_manifest.postgresql}
 
     postgresql_records = []
+    for postgresql_major_version in postgresql_major_versions:
+        old_postgresql_record = old_postgresql_records.get(postgresql_major_version)
+        new_postgresql_record = new_postgresql_records.get(postgresql_major_version)
 
-    for old, new in zip(old_versions, new_versions):
-        if old.upstream_tag == new.upstream_tag:
-            postgresql_records.append(old)
+        if not old_postgresql_record and new_postgresql_record:
+            postgresql_records.append(new_postgresql_record)
+        elif (
+            old_postgresql_record
+            and new_postgresql_record
+            and new_postgresql_record.upstream_tag != old_postgresql_record.upstream_tag
+        ):
+            postgresql_records.append(new_postgresql_record)
+        elif old_postgresql_record:
+            postgresql_records.append(old_postgresql_record)
         else:
-            postgresql_records.append(new)
+            continue
 
     manifest.postgresql = postgresql_records
 
