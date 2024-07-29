@@ -77,8 +77,8 @@ class Manifest:
 def get_wal2json_record(update_time: datetime) -> Wal2JsonRecord:
     return Wal2JsonRecord(
         last_updated=update_time,
-        version="2.5",
-        upstream_tag="wal2json_2_5",
+        version="2.6",
+        upstream_tag="wal2json_2_6",
     )
 
 
